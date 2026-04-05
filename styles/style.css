@@ -17,4 +17,32 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  font-family: var(--font-main);
+  font-variation-settings: 'wght' var(--font--card-text);
+}
+
+.header {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  block-size: 368px;
+  inline-size: 700px;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-family: var(--accent-font);
+}
+
+.header__title {
+  font-size: 65px;
+}
+
+.header__subtitle {
+  font-size: 23px;
+}
+
+.text__wrapper {
+  font-variation-settings: 'wght' var(--font-card-text);
 }
