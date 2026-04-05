@@ -13,4 +13,8 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--bg-vertical), var(--bg-horizontal), var(--bg-main);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
