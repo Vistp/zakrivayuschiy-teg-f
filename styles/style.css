@@ -17,7 +17,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  font-family: var(--font-main);
+  font-family: var(--main-font);
   font-variation-settings: 'wght' var(--font--card-text);
 }
 
@@ -45,4 +45,60 @@
 
 .text__wrapper {
   font-variation-settings: 'wght' var(--font-card-text);
+}
+
+.main {
+  margin: 100px auto;
+  inline-size: var(--main-inline-size);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.card__title {
+  margin-inline-start: 10px;
+  font-size: 18px;
+}
+
+.image__wrapper {
+  position: relative;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #d1c0c0;
+  object-fit: cover;
+}
+
+.card__label {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+}
+
+.text__wrapper {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 18px;
+  font-weight: 410;
+}
+
+.card__button {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  border: 2px solid #000;
+  background-color: #fff;
+  inline-size: 130px;
+  block-size: 38px;
 }

@@ -25,4 +25,7 @@
   --accent-font: 'PressStart2P', sans-serif;
   --font-weight-card-text: 410;
   --font-weight-card-title: 715;
+
+  --header-inline-size: clamp(375px, 100%, 700px);
+  --main-inline-size: clamp(375px, 100%, 700px);
 }
