@@ -29,7 +29,7 @@
   align-items: center;
   gap: 20px;
   block-size: 368px;
-  inline-size: 700px;
+  inline-size: var(--header-inline-size);
   background-color: #fff;
   border: 2px solid #000;
   font-family: var(--accent-font);
