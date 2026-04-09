@@ -41,25 +41,25 @@
 
 .header {
   margin: 100px auto;
+  padding-block: clamp(120px, 0.94vw + 116.5px, 130px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  block-size: 368px;
   inline-size: var(--header-inline-size);
   background-color: #fff;
-  border: 2px solid #000;
+  outline: 2px solid #000;
   font-family: var(--accent-font);
 }
 
 .header__title {
-  font-size: 65px;
+  font-size: clamp(49px, 1.5vw + 43.4px, 65px);
   text-transform: uppercase;
 }
 
 .header__subtitle {
-  font-size: 23px;
+  font-size: clamp(14px, 0.85vw + 10.8px, 23px);
   text-transform: uppercase;
 }
 
@@ -95,7 +95,6 @@
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: #d1c0c0;
   object-fit: cover;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
@@ -104,11 +103,26 @@
 
 .card__label {
   position: absolute;
-  top: 30px;
+  top: 28px;
   right: 24px;
   font-family: var(--accent-font);
   font-size: 14px;
   text-transform: uppercase;
+  opacity: 0.5;
+  color: transparent;
+  mix-blend-mode: hard-light;
+  text-shadow:
+    1px 1px 0 var(--label-color),
+    -1px -1px 0 var(--label-color),
+    1px -1px 0 var(--label-color),
+    -1px 1px 0 var(--label-color);
+}
+
+@supports (-webkit-text-stroke: 1px var(--label-color)) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--label-color);
+  }
 }
 
 .card__content {
@@ -246,11 +260,6 @@
   mix-blend-mode: difference;
 }
 
-.button__icon {
-  fill: #fff;
-  mix-blend-mode: difference;
-}
-
 .card__button:focus-visible {
   box-shadow: 2px 2px 0 #000;
 }
@@ -282,6 +291,13 @@
   line-height: 0.9;
 }
 
+.button__icon {
+  fill: #fff;
+  mix-blend-mode: difference;
+  width: 21px;
+    height: 21px;
+}
+
 .dialog:not([open]) {
   display: none;
 }
@@ -311,9 +327,27 @@
 
 .dialog__button {
   inline-size: 100%;
-  /* align-self: stretch; */
 }
 
 .dialog::backdrop {
   background-color: rgb(0 0 0 / 0.8);
+}
+
+@media (width <= 375px) {
+  .card__title {
+    margin-inline: 12px;
+  }
+
+  .save__button {
+    block-size: 84px;
+    inline-size: 306px;
+    flex-direction: column;
+    padding-block: 17px;
+  }
+
+  .button__icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+  }
 }
