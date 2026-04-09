@@ -21,6 +21,9 @@
     #1a1a1a
   );
 
+  --contour-color: #000;
+  --animation-fill-color: #FF0000;
+
   --main-font: 'Inter', sans-serif;
   --accent-font: 'PressStart2P', sans-serif;
   --font-weight-card-text: 410;
