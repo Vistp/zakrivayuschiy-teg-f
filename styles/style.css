@@ -101,6 +101,38 @@
   box-sizing: content-box;
 }
 
+.filter-brightness {
+  filter: brightness(100%);
+}
+
+.filter-contrast {
+  filter: contrast(70%);
+}
+
+.filter-blur {
+  filter: blur(0.2rem);
+}
+
+.filter-opacity {
+  filter: opacity(0.8);
+}
+
+.filter-grayscale {
+  filter: grayscale(0.8);
+}
+
+.filter-sepia {
+  filter: sepia(80%);
+}
+
+.filter-invert {
+  filter: invert(0.4);
+}
+
+.filter-mix {
+  filter: sepia(20%) contrast(80%) brightness(150%);
+}
+
 .card__label {
   position: absolute;
   top: 28px;
