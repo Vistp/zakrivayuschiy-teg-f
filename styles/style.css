@@ -10,24 +10,6 @@
 
 */
 
-@keyframes heart-scale {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.25);
-  }
-}
-
-@keyframes sparks-fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -48,8 +30,8 @@
   align-items: center;
   gap: 20px;
   inline-size: var(--header-inline-size);
-  background-color: #fff;
-  outline: 2px solid #000;
+  background-color: var(--secondary-color);
+  outline: 2px solid var(--primary-color);
   font-family: var(--accent-font);
 }
 
@@ -76,8 +58,8 @@
 }
 
 .card {
-  background-color: #fff;
-  border: 2px solid #000;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
 }
 
 .card__title {
@@ -85,6 +67,7 @@
   margin-block-start: 4px;
   margin-block-end: 4px;
   font-size: 18px;
+  font-weight: var(--font-weight-card-title);
 }
 
 .image__wrapper {
@@ -96,8 +79,8 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
+  border-top: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   box-sizing: content-box;
 }
 
@@ -163,7 +146,7 @@
   flex-direction: column;
   gap: 25px;
   font-size: 18px;
-  font-weight: 410;
+  font-weight: var(--font-weight-card-text);
 }
 
 .card__actions {
@@ -173,7 +156,7 @@
   gap: 5px;
 }
 
-/* Кнопка с сердечком и ее наполнение */
+/* Кнопка с сердечком */
 .card__icon-button {
   display: flex;
   align-items: center;
@@ -183,108 +166,31 @@
   border: 2px solid transparent;
   outline: none;
   transition: border-color 0.3s ease;
+  cursor: pointer;
 }
 
 .card__icon-button:focus-visible {
-  border-color: #000;
+  border-color: var(--primary-color);
 }
 
 .card__icon-button:focus {
   outline: none;
 }
 
-.like-icon {
-  transform-origin: center;
-}
-
-.heart {
-  transform-origin: center;
-}
-
-.contour {
-  fill: var(--contour-color);
-  transition: fill 0.1s linear;
-}
-
-.main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.core {
-  fill: transparent;
-  transition: fill 0.3s linear 0.03s;
-}
-
-.sparks {
-  opacity: 0;
-}
-
-.like-icon:hover .core {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear 0s;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon:hover .contour {
-  fill: var(--contour-color);
-  transition: fill 0.1s linear;
-}
-
-.like-icon:active .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0s;
-}
-
-.like-icon:active .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon:active .contour {
-  fill: var(--contour-color);
-  transition: fill 0.1s linear;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0.06s;
-}
-
-.like-icon.is-liked .heart {
-  animation: heart-scale 0.3s ease-in 0.1s 1;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks-fade 0.3s ease-in 0.3s 1;
-}
-
-.card__button {
+/* Базовый класс для всех кнопок */
+.button {
   position: relative;
   inline-size: 130px;
   font-family: var(--accent-font);
   font-size: 14px;
-  border: 2px solid #000;
-  color:#fff;
-  background-color: #fff;
+  border: 2px solid var(--primary-color);
+  color: var(--secondary-color);
+  background-color: var(--secondary-color);
   block-size: 38px;
   outline: none;
   transition: box-shadow 0.3s ease;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .button__text {
@@ -292,23 +198,23 @@
   mix-blend-mode: difference;
 }
 
-.card__button:focus-visible {
-  box-shadow: 2px 2px 0 #000;
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--primary-color);
 }
 
-.card__button::before {
+.button::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #000;
+  background-color: var(--primary-color);
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
 }
 
-.card__button:hover::before {
+.button:hover::before {
   transform: translateX(0);
 }
 
@@ -324,7 +230,7 @@
 }
 
 .button__icon {
-  fill: #fff;
+  fill: var(--secondary-color);
   mix-blend-mode: difference;
   width: 21px;
     height: 21px;
@@ -340,8 +246,8 @@
   flex-direction: column;
   gap: 30px;
   padding: 30px;
-  border: 2px solid #000;
-  background-color: #fff;
+  border: 2px solid var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .dialog__content {
@@ -362,7 +268,7 @@
 }
 
 .dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.8);
+  background-color: var(--bg-backdrop);
 }
 
 @media (width <= 375px) {

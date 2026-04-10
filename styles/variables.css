@@ -1,5 +1,9 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
+  /* Цвета и фон */
+--primary-color: #000;
+--secondary-color: #fff;
+
 --bg-vertical: repeating-linear-gradient(
     to right,
     #d3d3d3,
@@ -21,15 +25,21 @@
     #1a1a1a
   );
 
-  --contour-color: #000;
+  /* Цвета иконки */
+  --contour-color: var(--primary-color);
   --animation-fill-color: #FF0000;
-  --label-color: #fff;
+  /* Цвет лейбла карточки */
+  --label-color: var(--secondary-color);
+  /* backdrop диалога */
+  --bg-backdrop: rgb(0 0 0 / 0.8);
 
+  /* Текст */
   --main-font: 'Inter', sans-serif;
   --accent-font: 'PressStart2P', sans-serif;
   --font-weight-card-text: 410;
   --font-weight-card-title: 715;
 
+  /* Размеры */
   --header-inline-size: clamp(375px, 100%, 700px);
   --main-inline-size: clamp(375px, 100%, 700px);
 }
