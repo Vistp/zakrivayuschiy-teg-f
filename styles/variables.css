@@ -30,8 +30,6 @@
   --animation-fill-color: #FF0000;
   /* Цвет лейбла карточки */
   --label-color: var(--secondary-color);
-  /* backdrop диалога */
-  --bg-backdrop: rgb(0 0 0 / 0.8);
 
   /* Текст */
   --main-font: 'Inter', sans-serif;
